@@ -1,0 +1,15 @@
+{
+  "name": "directoryreader",
+  "version": "1.0.0",
+  "main": "directoryReader.js",
+  "scripts": {
+    "start": "node -e \"const args = process.argv.slice(2); const command = args.pop(); require('child_process').execSync(`npm run ${command} -- ${args.join(' ')}`, { stdio: 'inherit' })\"",
+    "reg": "node directoryReader.js",
+    "comp": "node directoryReader.js --compress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
