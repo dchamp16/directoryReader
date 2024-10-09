@@ -1,14 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 
-// Set the directory you want to scan and the base file name
-const parentDirectory = process.argv[2] || '.'; // Get directory from command-line argument or use current directory
-const baseFileName = 'directory_contents.txt';
+// Check if a directory path is provided as an argument
+const parentDirectory = process.argv[2];
+
+if (!parentDirectory) {
+    console.log("Usage: node directoryReader.js <directory_path> [--compress]");
+    console.log("Please provide the path to the directory you want to scan.");
+    console.log("Optional: Use the '--compress' flag to minimize the output.");
+    process.exit(1); // Exit the script if no directory path is provided
+}
 
 // Check if the --compress argument is passed to remove extra spaces and line breaks
 const compressOutput = process.argv.includes('--compress');
 
-// Set the output file name based on whether the --compress flag is used
+// Set the base file name and the output file name based on whether the --compress flag is used
+const baseFileName = 'directory_contents.txt';
 const outputFile = compressOutput
     ? path.join(__dirname, 'directory_contents_compressed.txt')
     : path.join(__dirname, baseFileName);
