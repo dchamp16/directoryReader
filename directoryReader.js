@@ -21,7 +21,7 @@ const outputFile = compressOutput
     : path.join(__dirname, baseFileName);
 
 // Excluded directories and files
-const excludedDirs = ['node_modules', '.idea', 'venv', '.git']; // Directories to exclude
+const excludedDirs = ['node_modules', '.idea', 'venv', '.git', '.next']; // Directories to exclude
 const excludedFiles = ['package-lock.json', '.DS_Store', '.gitattributes', '.gitignore']; // Files to exclude
 const excludedExtensions = ['.o', '.out', '.exe', '.png', '.pdf','.docx']; // Exclude binary and compiled file extensions
 
