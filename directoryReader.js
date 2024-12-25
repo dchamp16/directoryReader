@@ -21,9 +21,9 @@ const outputFile = compressOutput
     : path.join(__dirname, baseFileName);
 
 // Excluded directories and files
-const excludedDirs = ['node_modules', '.idea', 'venv', '.git', '.next', 'ui']; // Directories to exclude
+const excludedDirs = ['node_modules', '.idea', 'venv', '.git', '.next']; // Directories to exclude
 const excludedFiles = ['package-lock.json', '.DS_Store', '.gitattributes', '.gitignore']; // Files to exclude
-const excludedExtensions = ['.o', '.out', '.exe', '.png', '.pdf','.docx','.jpg','.jpeg']; // Exclude binary and compiled file extensions
+const excludedExtensions = ['.o', '.out', '.exe', '.png', '.pdf','.docx','.jpg','.jpeg', '.ico','.woff']; // Exclude binary and compiled file extensions
 
 // Helper function to generate a directory tree structure
 function generateDirectoryTree(directory, depth = 0) {
